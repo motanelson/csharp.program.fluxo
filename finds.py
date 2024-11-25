@@ -1,6 +1,6 @@
 a=""
 ff=input("give a .cs csharp file to find flux? ")
-f1=open("hello.cs")
+f1=open(ff,"r")
 a=f1.read()
 f1.close()
 c=a
