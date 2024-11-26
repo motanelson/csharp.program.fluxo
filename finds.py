@@ -54,7 +54,7 @@ for n in range(len(list1)):
     if a[list1[n]]=="}":
         tTrue=True
         nn=n
-        chamber-=1
+        chamber+=1
         chars=chamber
         
         c1=list1[0]
@@ -74,4 +74,5 @@ for n in range(len(list1)):
         print("---------------")
         calls+=1
     else:
-        chamber+=1
+        if chamber>0:
+            chamber=0
