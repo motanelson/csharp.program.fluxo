@@ -47,15 +47,31 @@ while tTrue:
 back=0
 calls=0
 fluxo="main:\n"
-for n in list1:
-    if a[n]=="}":
-        fluxo=fluxo+"call calls"+str(calls)+":\n" 
-        c1=back
-        c2=n
-        print("---------------\ncall"+str(calls)+":\n")
+chamber=0
+chars=0
+tTrue=True
+for n in range(len(list1)):    
+    if a[list1[n]]=="}":
+        tTrue=True
+        nn=n
+        chamber-=1
+        chars=chamber
+        
+        c1=list1[0]
+        while tTrue:
+            nn-=1
+            if a[list1[nn]]=="{":
+                chars-=1
+                if chars<1:
+                    c1=list1[nn]+1
+                    tTrue=False
+            
+            if nn<1:
+                tTrue=False
+        c2=list1[n]
         bh=a[c1:c2].strip()
         print(bh)
-        print("ret\n---------------")
+        print("---------------")
         calls+=1
-    back=n
-print(fluxo)
+    else:
+        chamber+=1
